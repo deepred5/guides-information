@@ -1,0 +1,83 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">编辑信息</div>
+    <div class="panel-body">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>编号</th>
+                    <th>证件号</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>工作年限</th>
+                    <th>特长</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="guide in guides" ng-controller="EditList">
+                    <td>
+                        <span ng-if="!edit">{{guide.name}}</span>
+                        <input type="text" ng-model="guide.name" class="form-control" ng-if="edit">
+                    </td>
+                    <td>
+                        <span ng-if="!edit">{{guide.id}}</span>
+                        <input type="text" ng-model="guide.id" class="form-control" ng-if="edit">
+                    </td>
+                    <td>
+                        <span ng-if="!edit">{{guide.cardId}}</span>
+                        <input type="text" ng-model="guide.cardId" class="form-control" ng-if="edit">
+                    </td>
+                    <td>
+                        <span ng-if="!edit">{{guide.age}}</span>
+                        <input type="text" ng-model="guide.age" class="form-control" ng-if="edit">
+                    </td>
+                    <td>
+                        <span ng-if="!edit">{{guide.sex}}</span>
+                        <input type="text" ng-model="guide.sex" class="form-control" ng-if="edit">
+                    </td>
+                    <td>
+                        <span ng-if="!edit">{{guide.workYears}}</span>
+                        <input type="text" ng-model="guide.workYears" class="form-control" ng-if="edit">
+                    </td>
+                    <td>
+                        <span ng-if="!edit">{{guide.specialty}}</span>
+                        <input type="text" ng-model="guide.specialty" class="form-control" ng-if="edit">
+                    </td>
+                    <td width="30%">
+                        <button type="button" class="btn btn-primary" ng-if="!edit" ng-click="click()">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;&nbsp;编辑
+                        </button>
+                        <button type="button" class="btn btn-success" ng-if="edit" ng-click="save()">
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>&nbsp;&nbsp;保存
+                        </button>
+                        <button type="button" class="btn btn-danger" ng-if="edit" ng-click="remove()">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;&nbsp;删除
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+               出错！
+            </h4>
+            </div>
+            <div class="modal-body">
+                输入数据有误
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

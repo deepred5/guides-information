@@ -1,0 +1,46 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">查询信息</div>
+    <div class="panel-body form-inline">
+        <label>搜索：
+            <input type="text" placeholder="输入关键字" class="form-control" ng-keyup="search()" ng-model="keywords">
+        </label>
+    </div>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>编号</th>
+            <th>证件号</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>工作年限</th>
+            <th>特长</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="guide in guides">
+            <td>
+                <span>{{guide.name}}</span>
+            </td>
+            <td>
+                <span>{{guide.id}}</span>
+            </td>
+            <td>
+                <span>{{guide.cardId}}</span>
+            </td>
+            <td>
+                <span>{{guide.age}}</span>
+            </td>
+            <td>
+                <span>{{guide.sex}}</span>
+            </td>
+            <td>
+                <span>{{guide.workYears}}</span>
+            </td>
+            <td>
+                <span>{{guide.specialty}}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
